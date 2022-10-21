@@ -1,0 +1,70 @@
+n=int(input("number of integers you want (minimum 5):"))
+if n>=5:
+    list1=[]
+    for i in range (1,n+1):
+        ele=int(input("enter your element"))
+        list1.append(ele)
+    print("the list of numbers is:",list1)
+    while True:
+        print("_"*50)
+        print(" ")
+        print("a.sum all the items in a list.")
+        print("b.get the largest number from a list.")
+        print("c.get the smallest number from a list.")
+        print("d.sort a list.")
+        print("e.clone or copy a list.")
+        print("f.convert a list of characters into a string.")
+        print("g.find the index of an item in a specified list.")
+        print("h.get the frequency of the elements in a list.")
+        print("i.assuming some list items inside a list on your own...display Printing 1st element of the sublist")
+        print("j.print the entire Sublist at index 4")
+        print(" ")
+        ch=input("enter your choice:")
+        if ch=='a':
+            sum1=0
+            for i in list1:
+                sum1+=i
+            print("sum of the elements in the list is:",sum1)
+        elif ch=='b':
+            large=max(list1)
+            print("the highest number in the list is:",large)
+
+        elif ch=='c':
+            small=min(list1)
+            print("the smallest number in the list is:",small)
+        elif ch=='d':
+            list1.sort()
+            print("the sorted list is:",list1)
+        elif ch=='e':
+            clist=list1.copy()
+            print("the clone or copy list,clist=",clist)
+        elif ch=='f':
+            str1=""
+            for i in list1:
+                st=str(i)
+                str1=str1+st
+            print("the final string is:",str1)
+        elif ch=='g':
+            e=int(input("enter the number you wanna search for"))
+            ind=list1.index(e)
+            print("the index of searched number is:",ind)
+        elif ch=='h':
+            for i in list1:
+                num=list1.count(i)
+                print("the letter",i,"has come",num,"times")
+        elif ch=='i':
+            list2=[1,2,3,[8,3,5],7]
+            print("the new list is:",list2)
+            first=list2[3][0]
+            print("the first element of sublist is",first)
+        elif ch=='j':
+            list2=[8,3,5]
+            print("A new sublist is:",list2)
+            list1.insert(4,list2)
+            print("newly created list is:",list1)  
+            
+        else:
+            print("enter valid input")
+
+else:
+    print("enter valid input")
